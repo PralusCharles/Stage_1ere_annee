@@ -20,7 +20,7 @@ def main():
 def run_console_mode():
     controller = Controller()
     console_view = ConsoleView()
-    console_view.run()
+    return console_view
 
 def run_tkinter_mode():
     root = tk.Tk()

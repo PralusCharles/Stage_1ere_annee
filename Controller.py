@@ -5,7 +5,6 @@ class Controller():
         self.model = Season("2023", 1)
 
     def create_season(self, label, id):
-        # Vérifier si une saison avec le même id existe déjà
         for existing_season in self.model.seasons:
             if existing_season.id == id:
                 return 400, "Une saison avec cet identifiant existe déjà."
@@ -51,7 +50,6 @@ class Controller():
         if home_team is None or away_team is None:
             return 400, "Les équipes spécifiées ne font pas partie de cette ligue."
 
-        # Ajoutez ici la vérification pour que la date soit dans le futur
 
         new_fixture = Fixture(home_team, away_team, date)
         target_league.fixtures.append(new_fixture)
