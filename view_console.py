@@ -1,13 +1,30 @@
 class ConsoleView():
-    @staticmethod
-    def show_seasons(seasons):
-        for season in seasons:
-            print(f"Season: {season.label}, ID: {season.id}")
+    print("\nMenu :")
+    print("1. Créer une saison")
+    print("2. Créer une ligue")
+    print("3. Ajouter une équipe")
+    print("4. Créer une journée")
+    print("5. Programmer un match")
+    print("6. Afficher les données")
+    print("7. Quitter")
 
-    @staticmethod
-    def show_league(league):
-        print(f"League: {league.name}, Season: {league.season.label}")
-        for team in league.teams:
-            print(f"Team: {team.name}")
-        for fixture in league.fixtures:
-            print(f"Fixture: {fixture.home_team.name} vs {fixture.away_team.name}, Date: {fixture.date}")
+    choice = input("Choix : ")
+
+    if choice == "1":
+        create_season()
+    elif choice == "2":
+        create_league()
+    elif choice == "3":
+        add_team()
+    elif choice == "4":
+        create_fixture()
+    elif choice == "5":
+        schedule_match()
+    elif choice == "6":
+        show_data()
+    elif choice == "7":
+        break
+    else:
+        print("Erreur: Choix invalide")
+
+print("Programme terminé.")
